@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proffesional_portfolio/variable.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:proffesional_portfolio/widgets/custom_header.dart';
 
 class AboutWidget extends StatelessWidget {
@@ -7,20 +7,23 @@ class AboutWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black,
         body: Column(
           children: [
-            CustomHeader(
+            const CustomHeader(
               title: "Abdellah",
               subTitle: "Regad",
               icon: "assets/images/svgs/skills.svg",
             ),
             Center(
-              child: Text(
-                "HELLO THERE!!!",
-                style: buttonStyleDefault,
+              child: SelectableText(
+                "When I was six years old",
+                style: GoogleFonts.sintony(
+                  fontSize: 17,
+                  color: Color.fromARGB(255, 228, 100, 0),
+                ),
               ),
             ),
           ],

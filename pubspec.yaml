@@ -35,6 +35,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.8
+  intl: ^0.18.1
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +79,19 @@ flutter:
     - family: EUROCAPS
       fonts:
         - asset: assets/fonts/EUROCAPS.ttf
+
+    - family: CenturyGothic
+      fonts:
+        - asset: assets/fonts/century_gothic.otf
+
+    - family: EurostileRoman
+      fonts:
+        - asset: assets/fonts/eurostile-roman.ttf
+
+    - family: Sintony
+      fonts:
+        - asset: assets/fonts/Sintony-Regular.ttf
+        - asset: assets/fonts/Sintony-Bold.ttf
 
   #   - family: Trajan Pro
   #     fonts:

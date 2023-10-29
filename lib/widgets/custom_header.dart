@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:proffesional_portfolio/variable.dart';
+import 'package:intl/intl.dart';
 
 class CustomHeader extends StatelessWidget {
   const CustomHeader(
@@ -80,7 +81,7 @@ class CustomHeader extends StatelessWidget {
             title,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 25,
               fontWeight: FontWeight.w100,
               fontFamily: "EUROCAPS",
             ),
@@ -91,8 +92,8 @@ class CustomHeader extends StatelessWidget {
           child: Text(
             subTitle,
             style: const TextStyle(
-              fontSize: 20,
-              color: Color.fromARGB(255, 255, 111, 0),
+              fontSize: 17,
+              color: Color.fromARGB(255, 255, 100, 0),
               fontFamily: "EUROCAPS",
             ),
           ),
@@ -102,19 +103,23 @@ class CustomHeader extends StatelessWidget {
   }
 
   Row _buildTimeDate() {
+    DateTime date = DateTime.now();
+    String formattedTime = DateFormat('Hms').format(date);
+    String formattedDate = DateFormat('d MMM y').format(date);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Column(
+        Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Padding(
               padding: EdgeInsets.only(bottom: 8.0),
               child: Text(
-                "Time",
+                formattedTime,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   color: Color.fromARGB(255, 255, 111, 0),
                   fontFamily: "EUROCAPS",
                 ),
@@ -123,10 +128,10 @@ class CustomHeader extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 8.0),
               child: Text(
-                "Date",
+                formattedDate,
                 style: TextStyle(
-                  fontSize: 20,
-                  color: Color.fromARGB(255, 255, 111, 0),
+                  fontSize: 17,
+                  color: Color.fromARGB(255, 255, 100, 0),
                   fontFamily: "EUROCAPS",
                 ),
               ),
@@ -137,7 +142,7 @@ class CustomHeader extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 8.0, left: 3),
           child: Container(
             width: 2,
-            height: 45,
+            height: 50,
             color: btnDefault,
           ),
         ),
