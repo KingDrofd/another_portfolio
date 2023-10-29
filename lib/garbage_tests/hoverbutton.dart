@@ -1,38 +1,38 @@
 import 'package:flutter/material.dart';
 
-class HoverContainer extends StatefulWidget {
+class AnimatedHoverColorChangeContainer extends StatefulWidget {
   @override
-  _HoverContainerState createState() => _HoverContainerState();
+  _AnimatedHoverColorChangeContainerState createState() =>
+      _AnimatedHoverColorChangeContainerState();
 }
 
-class _HoverContainerState extends State<HoverContainer> {
+class _AnimatedHoverColorChangeContainerState
+    extends State<AnimatedHoverColorChangeContainer> {
   bool isHovered = false;
 
-  void onEnter(PointerEvent event) {
+  void _handleHover(bool isHovering) {
     setState(() {
-      isHovered = true;
-    });
-  }
-
-  void onExit(PointerEvent event) {
-    setState(() {
-      isHovered = false;
+      isHovered = isHovering;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final containerColor = isHovered ? Colors.blue : Colors.red;
-
     return MouseRegion(
-      onEnter: onEnter,
-      onExit: onExit,
-      child: Container(
+      onEnter: (_) => _handleHover(true),
+      onExit: (_) => _handleHover(false),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 300), // Animation duration
         width: 200,
         height: 200,
-        color: containerColor,
+        color: isHovered ? Colors.blue : Colors.green,
         child: Center(
-          child: Text('Hover over me!'),
+          child: Text(
+            isHovered ? 'Hovered' : 'Not Hovered',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
         ),
       ),
     );

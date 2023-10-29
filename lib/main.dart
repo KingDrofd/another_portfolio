@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:proffesional_portfolio/garbage_tests/hoverbutton.dart';
+
 import 'package:proffesional_portfolio/variable.dart';
+import 'package:proffesional_portfolio/widgets/about_me.dart';
 import 'package:proffesional_portfolio/widgets/codex.dart';
 import 'package:proffesional_portfolio/widgets/custom_button.dart';
 
 void main() {
-  runApp(Codex());
+  runApp(AboutWidget());
 }
 
 class MyApp extends StatefulWidget {
@@ -28,8 +28,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   Scaffold buildApp(double width, double height) {
-    Color iconColor = defaultIconColor;
-
     return Scaffold(
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
@@ -53,7 +51,8 @@ class _MyAppState extends State<MyApp> {
                   "quis nostrud exercitation ullamco laboris nisi ut aliquip"
                   " ex ea commodo consequat. Duis aute irure dolor in reprehenderit "
                   "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur "
-                  "sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                  "sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mol"
+                  "lit anim id est laborum.",
                   style: buttonStyleDefault,
                 ),
               ),
@@ -65,6 +64,10 @@ class _MyAppState extends State<MyApp> {
                     onPressed: () {
                       setState(() {
                         print("object");
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return Codex();
+                        }));
                       });
                     },
                     btnText: "HOLO-ME",
@@ -90,9 +93,7 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ButtonMockUp(
-                    onPressed: () {
-                      print("object");
-                    },
+                    onPressed: () {},
                     btnText: "Projects",
                     width: double.maxFinite,
                     height: height,
@@ -117,9 +118,7 @@ class _MyAppState extends State<MyApp> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      print(btnIsHovered);
-                    });
+                    setState(() {});
                   },
                   child: Text("test"))
             ],

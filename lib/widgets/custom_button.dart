@@ -14,7 +14,6 @@ class ButtonMockUp extends StatefulWidget {
     this.padding = 1,
     this.textStyle = buttonStyleDefault,
   });
-
   final double width;
   final double height;
   final int widgetFlex;
@@ -58,13 +57,11 @@ class _ButtonMockUpState extends State<ButtonMockUp> {
           onTapDown: (details) {
             setState(() {
               containerColor = Colors.white;
+              iconColor = Colors.black;
             });
           },
           onTapUp: (details) {
-            setState(() {
-              containerColor = btnDefaultColor;
-              iconColor = defaultIconColor;
-            });
+            setState(() {});
             widget.onPressed();
           },
           onLongPress: () {
