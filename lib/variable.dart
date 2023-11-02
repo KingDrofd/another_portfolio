@@ -20,3 +20,4 @@ const btnHoverColor = Color.fromARGB(255, 255, 111, 0);
 const iconHoverColor = Color.fromARGB(255, 29, 5, 0);
 
 const buttonColor = Color.fromARGB(211, 81, 38, 5);
+bool isHovered = false;

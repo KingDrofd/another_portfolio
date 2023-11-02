@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'package:proffesional_portfolio/variable.dart';
 import 'package:proffesional_portfolio/widgets/about_me.dart';
+
 import 'package:proffesional_portfolio/widgets/codex.dart';
 import 'package:proffesional_portfolio/widgets/custom_button.dart';
+import 'package:proffesional_portfolio/widgets/custom_container.dart';
 
 void main() {
-  runApp(AboutWidget());
+  runApp(
+    AboutWidget(),
+  );
 }
 
 class MyApp extends StatefulWidget {

@@ -34,7 +34,10 @@ class CustomHeader extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [_buildTitle(), _buildTimeDate()],
+                  children: [
+                    _buildTitle(),
+                    _buildTimeDate(),
+                  ],
                 ),
                 const Divider(
                   height: 5,
